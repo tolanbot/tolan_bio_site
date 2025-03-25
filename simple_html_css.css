@@ -1,0 +1,80 @@
+html {
+    overflow-y: hidden;
+}
+html, body {
+    background-color: #84a384;
+    height: 100%;
+    margin: 0;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 34.5px; /* Adjust based on the height of your nav bar */
+}
+.columns {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+}
+#my_pic.responsive {
+    max-width: 400px;
+    height: auto;
+}
+li.colors {
+    font-weight: bold;
+    color:#2e4516;
+    font-size: large;
+}
+/* Navigation Bar Styles */
+nav {
+    position: fixed;     /* Fixed at the top */
+    top: 0;
+    width: 100%;
+    background-color: #333; /* Background color */
+    padding: 0.5rem;
+    z-index: 1000;       /* Ensures it stays on top of other content */
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;         /* Displays links horizontally */
+    justify-content: center; /* Center the nav items */
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    margin: 0 0.5rem;        /* Spacing between links */
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease; /* CSS transition for hover effect */
+  }
+  
+  nav a:hover {
+    color: #84a384;        /* Changes color when hovered */
+  }
+
+  /* contact form styles*/
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    width: 100%;
+    margin: 0 auto;
+  }
+  .submit-button {
+    margin-top: 1rem;
+  }
