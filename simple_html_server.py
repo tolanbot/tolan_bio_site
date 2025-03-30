@@ -16,17 +16,26 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
                     'bio': 'sound engineer/musician turned software developer',
                     'hobbies': ['music', 'coding', 'video games', 'cooking', 'etc...']
                 }
-                self.handleHeaders(data)
+                self.handleHeaders(data, True)
             case '/api/contact':
                 contact_info = {
                     'name': "Chris Tolan",
                     'phone': "813-410-2858",
                     'email': "christolansf@icloud.com"
                 }
-                self.handleHeaders(contact_info)
+                self.handleHeaders(contact_info, True)
             case '/favicon.ico':
                   self.path = '/favicon.svg'
                   super().do_GET()
+            case '/api/gallery':
+                image_object = [
+                    {
+                        "src": "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.6435-9/185321622_10218046087574035_3186882831171380852_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=sZkhaIpYDp4Q7kNvgGpegUt&_nc_oc=Adnrp7_pOufvUHfdS8PzeZeZ10JfZ4ZzRWEaZhUeAu78XvOYumQhXSK4wN06qmCUabFl74HXnou-8VFGGwNFFAK4&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&_nc_gid=42Bjr9DQBNu4vVv0Ij9v3w&oh=00_AYHpoxnSbvlLCZ4p6QCGqcgeE5HfPDgm0pjttw-5kobXhQ&oe=6806A0FF",
+                        "alt": "chris tolan"
+                    }
+                ]
+
+                self.handleHeaders(image_object, True)
             case _:
                 super().do_GET()
 

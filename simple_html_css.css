@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 html {
     overflow-y: hidden;
 }
@@ -13,6 +16,39 @@ body {
     flex-direction: column;
     padding-top: 34.5px; /* Adjust based on the height of your nav bar */
 }
+
+.cover_image {
+    border: none;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: #a9d4a8;
+    box-shadow: 2px -2px 6px rgba(0,0,0,0.2);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.grid > div img {
+    border-radius: 10px;
+}
+
+.grid > div {
+    border: none;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: #a9d4a8;
+    box-shadow: 2px -2px 6px rgba(0,0,0,0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.grid > div:hover {
+    box-shadow: 6px -6px 12px rgba(0,0,0,0.4);
+}
+
 .columns {
     display: flex;
     flex-direction: row;
