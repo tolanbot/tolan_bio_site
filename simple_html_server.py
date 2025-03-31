@@ -10,7 +10,7 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
         log.info(f"received request for path: {self.path}")
         match self.path:
             case '/image_gallery':
-                self.path = "/image_gallery.html'
+                self.path = '/image_gallery.html'
                 super().do_GET()
             case '/contact':
                 self.path = '/contact.html'
