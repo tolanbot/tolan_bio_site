@@ -16,8 +16,8 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
             case '/contact':
                 self.path = '/contact.html'
                 super().do_GET()
-            case '/home':
-                self.path = '/home.html'
+            case '/index':
+                self.path = '/index.html'
                 super().do_GET()
             case '/hobbies':
                 self.path = '/hobbies.html'
