@@ -9,17 +9,17 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
         log.info(f"received request for path: {self.path}")
         match self.path:
-            case '/image_gallery':
-                self.path = '/image_gallery.html'
+            case '/tolan_bio_site/image_gallery':
+                self.path = '/tolan_bio_site/image_gallery.html'
                 super().do_GET()
-            case '/contact':
-                self.path = '/contact.html'
+            case '/tolan_bio_site/contact':
+                self.path = '/tolan_bio_site/contact.html'
                 super().do_GET()
-            case '/index':
-                self.path = '/index.html'
+            case '/tolan_bio_site/index':
+                self.path = '/tolan_bio_site/index.html'
                 super().do_GET()
-            case '/hobbies':
-                self.path = '/hobbies.html'
+            case '/tolan_bio_site/hobbies':
+                self.path = '/tolan_bio_site/hobbies.html'
                 super().do_GET()
             case '/api/info':
                 data = {
