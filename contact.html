@@ -1,45 +1,43 @@
 <!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Simple HTML With Server</title>
-    <link rel="stylesheet" href="simple_html_css.css">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <base href="/tolan_bio_site/">
+  <meta charset="UTF-8">
+  <title>Contact Page</title>
+  <link rel="stylesheet" href="simple_html_css.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <base href="/tolan_bio_site/">
 </head>
- <body>
-    <nav>
-        <ul class="columns">
-            <li><a href="index">HOME</a></li>
-            <li><a href="hobbies">HOBBIES</a></li>
-            <li><a href="contact">CONTACT</a></li>
-            <li><a href="image_gallery">IMAGE GALLERY</a></li>
-        </ul>
-    </nav>
-
-    <div class="contact-form cover_page">
-        <div class="card centered-horizontally">
-            <h3>Contact Me!</h3>
-            <form action="/api/submit-contact" method="post" id="contactForm">
-                <div>
-                    <label>Name:
-                        <input name="submitted-name" autocomplete="name"/>
-                    </label>
-                </div>
-                <div>
-                    <label>Email:
-                        <input name="submitted-email" autocomplete="email"/>
-                    </label>
-                </div>
-                <div>
-                    <label>Phone:
-                        <input name="submitted-phone" autocomplete="mobile"/>
-                    </label>
-                </div>
-                <div>
-                    <input type="submit" value="Submit" class="submit-button"/>
-                </div>
-            </form>
+<body>
+  <nav>
+    <ul class="columns">
+      <li><a href="index">HOME</a></li>
+      <li><a href="hobbies">HOBBIES</a></li>
+      <li><a href="contact">CONTACT</a></li>
+      <li><a href="image_gallery">IMAGE GALLERY</a></li>
+    </ul>
+  </nav>
+  <div class="contact-form cover_page">
+    <div class="card centered-horizontally">
+      <h3>Contact Me!</h3>
+      <form action="/api/submit-contact" method="post" id="contactForm">
+        <div class="form-row">
+          <label for="submitted-name">Name:</label>
+          <input id="submitted-name" name="submitted-name" autocomplete="name"/>
         </div>
+        <div class="form-row">
+          <label for="submitted-email">Email:</label>
+          <input id="submitted-email" name="submitted-email" autocomplete="email"/>
+        </div>
+        <div class="form-row">
+          <label for="submitted-phone">Phone:</label>
+          <input id="submitted-phone" name="submitted-phone" autocomplete="mobile"/>
+        </div>
+        <div class="form-row submit-row">
+          <input type="submit" value="Submit" class="submit-button"/>
+        </div>
+      </form>
     </div>
-    <script src="form_submission.js"></script>
- </body>
+  </div>
+  <script src="form_submission.js"></script>
+</body>
+</html>
