@@ -2,7 +2,6 @@ import http.server
 import socketserver
 import json
 import logging 
-base = "/tolan_bio_site"
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
 
@@ -11,7 +10,7 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
         log.info(f"received request for path: {self.path}")
         match self.path:
             case '/image_gallery':
-                self.path = f'{base}/image_gallery.html'
+                self.path = "/image_gallery.html'
                 super().do_GET()
             case '/contact':
                 self.path = '/contact.html'
