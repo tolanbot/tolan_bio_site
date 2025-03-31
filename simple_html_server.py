@@ -31,8 +31,8 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
             case '/api/contact':
                 contact_info = {
                     'name': "Chris Tolan",
-                    'phone': "813-410-2858",
-                    'email': "christolansf@icloud.com"
+                    'phone': "415-867-5309",
+                    'email': "christolan@tolbot.com"
                 }
                 self.handleHeaders(contact_info, True)
             case '/favicon.ico':
@@ -85,57 +85,3 @@ PORT = 8000
 with socketserver.TCPServer(("", PORT), MyHandler) as httpd:
     log.info(f"Serving at port {PORT}")
     httpd.serve_forever()
-
-
-
-
-            #         # self.send_response(400)
-            #         # self.send_header("Content-Type", "application/json")
-            #         # self.end_headers()
-            #         # self.wfile.write(json.dumps({"status": "failure", "message": "Invalid JSON"}).encode('utf-8'))
-            #         return
-
-
-            #     # respons_data = json.dumps(response).encode('utf-8')
-            #     # self.send_response(200)
-            #     # self.send_header("Content-Type", "application/json")
-            #     # self.send_header("Content-Length", str(len(respons_data)))
-            #     # self.end_headers()
-            #     # self.wfile.write(respons_data)
-
-
-
-# class MyHandler(http.server.SimpleHTTPRequestHandler):
-#     def do_GET(self):
-#         if self.path == '/api/info':
-#             data = {
-#                 'name': "Chris Tolan",
-#                 'bio': 'sound engineer/musician turned software developer',
-#                 'hobbies': ['music', 'coding', 'video games', 'cooking', 'etc...']
-#             }
-#             json_data = json.dumps(data).encode('utf-8')
-#             #send http header
-#             self.send_response(200)
-#             self.send_header("Content-Type", "application/json")
-#             self.send_header("Content-Length", str(len(json_data)))
-#             self.end_headers()
-#             # write JSON to response
-#             self.wfile.write(json_data)
-#         else:
-#             super().do_GET()
-        
-# PORT = 8000
-# with socketserver.TCPServer(("", PORT), MyHandler) as httpd:
-#     log.info(f"Serving at port {PORT}")
-#     httpd.serve_forever()
-
-
-
-
-
-
-
-#simple HTTP server that listens on port 8000
-# httpd = http.server.HTTPServer(('', 8000), http.server.SimpleHTTPRequestHandler)
-# print("Serving HTTP on port 8000...")
-# httpd.serve_forever()
