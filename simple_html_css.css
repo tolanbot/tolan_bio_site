@@ -156,21 +156,44 @@ nav {
     color: #84a384;        /* Changes color when hovered */
   }
 
-  /* contact form styles*/
-  .contact-form {
+.contact-form form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 1rem;
+/* align-items: center;     */
+/* width: 100%; */
+/* margin: 0 auto; */
+}
+
+/* Form container styling */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;   /* Limit width of form */
+    margin: 0 auto;     /* Center form horizontally */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;          /* Vertical spacing between rows */
   }
   
-  .contact-form form {
+  /* Each row in the form */
+  .form-row {
     display: flex;
-    flex-direction: column;
-    align-items: center;    
-    width: 100%;
-    margin: 0 auto;
+    align-items: center;
+    gap: 1rem;          /* Space between label and input */
   }
+  
+  /* Style the labels */
+  .form-row label {
+    width: 80px;        /* Fixed width so all labels align */
+    text-align: right;  /* Right-align the text in labels */
+  }
+  
+  /* Style the input fields */
+  .form-row input {
+    flex: 1;            /* Input takes up remaining space */
+    padding: 0.5rem;    /* Optional: add padding for better appearance */
+  }
+
   .submit-button {
     margin-top: 1rem;
   }
