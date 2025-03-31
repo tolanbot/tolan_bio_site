@@ -8,35 +8,37 @@
  <body>
     <nav>
         <ul class="columns">
-            <li><a href="/simple_html.html">HOME</a></li>
-            <li><a href="/hobbies.html">HOBBIES</a></li>
-            <li><a href="/contact.html">CONTACT</a></li>
-            <li><a href="/image_gallery.html">IMAGE GALLERY</a></li>
+            <li><a href="/home">HOME</a></li>
+            <li><a href="/hobbies">HOBBIES</a></li>
+            <li><a href="/contact">CONTACT</a></li>
+            <li><a href="/image_gallery">IMAGE GALLERY</a></li>
         </ul>
     </nav>
 
-    <div class="contact-form">
-        <h3>Contact Me!</h3>
-        <form action="/api/submit-contact" method="post" id="contactForm">
-            <div>
-                <label>Name:
-                    <input name="submitted-name" autocomplete="name"/>
-                </label>
-            </div>
-            <div>
-                <label>Email:
-                    <input name="submitted-email" autocomplete="email"/>
-                </label>
-            </div>
-            <div>
-                <label>Phone:
-                    <input name="submitted-phone" autocomplete="mobile"/>
-                </label>
-            </div>
-            <div>
-                <input type="submit" value="Submit" class="submit-button"/>
-            </div>
-        </form>
+    <div class="contact-form cover_page">
+        <div class="card centered-horizontally">
+            <h3>Contact Me!</h3>
+            <form action="/api/submit-contact" method="post" id="contactForm">
+                <div>
+                    <label>Name:
+                        <input name="submitted-name" autocomplete="name"/>
+                    </label>
+                </div>
+                <div>
+                    <label>Email:
+                        <input name="submitted-email" autocomplete="email"/>
+                    </label>
+                </div>
+                <div>
+                    <label>Phone:
+                        <input name="submitted-phone" autocomplete="mobile"/>
+                    </label>
+                </div>
+                <div>
+                    <input type="submit" value="Submit" class="submit-button"/>
+                </div>
+            </form>
+        </div>
     </div>
     <script src="form_submission.js"></script>
  </body>

@@ -10,6 +10,18 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
         log.info(f"received request for path: {self.path}")
         match self.path:
+            case '/image_gallery':
+                self.path = '/image_gallery.html'
+                super().do_GET()
+            case '/contact':
+                self.path = '/contact.html'
+                super().do_GET()
+            case '/home':
+                self.path = '/home.html'
+                super().do_GET()
+            case '/hobbies':
+                self.path = '/hobbies.html'
+                super().do_GET()
             case '/api/info':
                 data = {
                     'name': "Chris Tolan",
