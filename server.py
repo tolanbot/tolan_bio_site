@@ -1,7 +1,8 @@
 import http.server
 import socketserver
 import json
-import logging 
+import logging
+from urllib.parse import urlparse, parse_qs
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
 
@@ -39,13 +40,59 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
                   self.path = '/favicon.svg'
                   super().do_GET()
             case '/api/gallery':
+                parsed = urlparse(self.path)
+                query_params = parse_qs(parsed.query)
+                category = query_params.get("category", [None])[0]
+                
                 image_object = [
                     {
-                        "src": "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.6435-9/185321622_10218046087574035_3186882831171380852_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=sZkhaIpYDp4Q7kNvgGpegUt&_nc_oc=Adnrp7_pOufvUHfdS8PzeZeZ10JfZ4ZzRWEaZhUeAu78XvOYumQhXSK4wN06qmCUabFl74HXnou-8VFGGwNFFAK4&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&_nc_gid=42Bjr9DQBNu4vVv0Ij9v3w&oh=00_AYHpoxnSbvlLCZ4p6QCGqcgeE5HfPDgm0pjttw-5kobXhQ&oe=6806A0FF",
-                        "alt": "chris tolan"
-                    }
+                        "src": "https://live.staticflickr.com/65535/54416799767_c306eb47fa_5k.jpg",
+                        "alt": "chris tolan",
+                        "category": "city"
+                    },
+                    {
+                        "src": "https://live.staticflickr.com/65535/54417378698_ca8486adee_6k.jpg",
+                        "alt": "chris tolan",
+                        "category": "city"
+                    },
+                    {
+                        "src": "https://live.staticflickr.com/65535/54416579489_3b162debdb_6k.jpg",
+                        "alt": "chris tolan",
+                        "catagory": "city"
+                    },
+                    {
+                        "src": "https://live.staticflickr.com/65535/54416374516_834ef30396_5k.jpg",
+                        "alt": "chris tolan",
+                        "category": "nature"
+                    },
+                    {
+                        "src": "https://live.staticflickr.com/65535/54416971824_9c78cd0d5d_5k.jpg",
+                        "alt": "chris tolan",
+                        "category": "nature"
+                    },
+                    {
+                        "src": "https://live.staticflickr.com/65535/54416568400_5abf15cdcf_5k.jpg",
+                        "alt": "chris tolan",
+                        "category": "nature"
+                    },
+                    {
+                        "src": "https://live.staticflickr.com/65535/54414994482_35e7451ce3_3k.jpg",
+                        "alt": "chris tolan",
+                        "category": "technology"
+                    },
+                    {
+                        "src": "https://live.staticflickr.com/65535/54415763513_021bc2b91f_k.jpg",
+                        "alt": "chris tolan",
+                        "category": "technology"
+                    },
+                    {
+                        "src": "https://live.staticflickr.com/65535/54414807236_cfa476240f_k.jpg",
+                        "alt": "chris tolan",
+                        "category": "technology"
+                    },
                 ]
-
+                if category:
+                    image_object = [img for img in image_object if img["category"] == category]
                 self.handleHeaders(image_object, True)
             case _:
                 super().do_GET()
