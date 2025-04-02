@@ -22,7 +22,7 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
             case '/tolan_bio_site/hobbies':
                 self.path = '/tolan_bio_site/hobbies.html'
                 super().do_GET()
-            case '/api/info':
+            case '/tolan_bio_site/api/info':
                 data = {
                     'name': "Chris Tolan",
                     'bio': 'sound engineer/musician turned software developer',
