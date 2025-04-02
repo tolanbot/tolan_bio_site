@@ -99,7 +99,7 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
 
     def do_POST(self):
         match self.path:
-            case '/api/submit-contact':
+            case '/tolan_bio_site/api/submit-contact':
                 content_length = int(self.headers.get('Content-Length', 0))
                 post_data = self.rfile.read(content_length)
                 try:
